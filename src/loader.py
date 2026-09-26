@@ -1,7 +1,7 @@
 import pandas as pd 
 
 
-def data_loader(data_name: str):
+def data_loader(data_name: str) -> pd.DataFrame:
 
     """This Function will load data - this is a simple version which only support csv files
     
