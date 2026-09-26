@@ -9,6 +9,7 @@ def profile_dataset(df: pd.DataFrame) -> dict:
      dictionary which contains number of rows, columns, 
      duplicates for a data frame, also returns data type,
      number of missing and unique value along with missing percentage
+     for each columns
      """
 
      column_profiles = {}
