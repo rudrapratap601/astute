@@ -6,14 +6,14 @@ def profile_dataset(df: pd.DataFrame):
 
      column_profiles = {}
 
-     for i in range(df.shape[1]):
+     for i in df.columns:
 
-         column_profiles[df.columns[i]] = {
+         column_profiles[i] = {
 
-             "dtype" : df[df.columns[i]].dtype,
-             "missing_count" : int(df[df.columns[i]].isnull().sum()),
-             "missing_percentage" : round(float(df[df.columns[i]].isnull().sum() / df.shape[0] * 100), 2),
-             "unique_count" : int(df[df.columns[i]].nunique())
+             "dtype" : df[i].dtype,
+             "missing_count" : int(df[i].isnull().sum()),
+             "missing_percentage" : round(float(df[i].isnull().sum() / df.shape[0] * 100), 2),
+             "unique_count" : int(df[i].nunique())
          }
 
      data_dict = {
