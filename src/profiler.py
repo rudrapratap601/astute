@@ -4,6 +4,13 @@ from loader import data_loader
 
 def profile_dataset(df: pd.DataFrame) -> dict:
 
+     """
+     This function take dataframe as input and return
+     dictionary which contains number of rows, columns, 
+     duplicates for a data frame, also returns data type,
+     number of missing and unique value along with missing percentage
+     """
+
      column_profiles = {}
 
      for col in df.columns:
