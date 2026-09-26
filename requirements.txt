@@ -1,0 +1,32 @@
+# Data processing and statistics
+pandas
+numpy
+scipy
+
+# Excel and Parquet input/output
+openpyxl
+pyarrow
+
+# Visualization and reports
+matplotlib
+seaborn
+plotly
+jinja2
+
+# Machine learning and model persistence
+scikit-learn
+joblib
+
+# API, request validation, and configuration
+fastapi[standard]
+pydantic
+pydantic-settings
+python-dotenv
+
+# Planned PostgreSQL storage
+sqlalchemy
+psycopg[binary]
+
+# Testing and API client
+pytest
+httpx
