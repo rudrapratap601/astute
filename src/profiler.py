@@ -2,18 +2,20 @@ import pandas as pd
 
 from loader import data_loader
 
-def profile_dataset(df: pd.DataFrame):
+def profile_dataset(df: pd.DataFrame) -> dict:
 
      column_profiles = {}
 
-     for i in df.columns:
+     for col in df.columns:
 
-         column_profiles[i] = {
+         missing_count = df[col].isnull().sum()
 
-             "dtype" : df[i].dtype,
-             "missing_count" : int(df[i].isnull().sum()),
-             "missing_percentage" : round(float(df[i].isnull().sum() / df.shape[0] * 100), 2),
-             "unique_count" : int(df[i].nunique())
+         column_profiles[col] = {
+
+             "dtype" : str(df[col].dtype),
+             "missing_count" : int(missing_count),
+             "missing_percentage" : round(float(missing_count / df.shape[0] * 100), 2),
+             "unique_count" : int(df[col].nunique())
          }
 
      data_dict = {
@@ -25,7 +27,6 @@ def profile_dataset(df: pd.DataFrame):
      }
 
      return data_dict
-
     
 
 try :
